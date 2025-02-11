@@ -2,20 +2,20 @@ import React, { useState, useEffect } from 'react';
 import ScrollReveal from 'scrollreveal';
 import './App.css'; // <-- Import your CSS
 import StarBackground from './Components/StarBackground'; // Our new star background
-
+import ClientsCarousel from './Components/ClientsCarousel';
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState('#home');
 
-  // Handle toggling the mobile menu
+  // Toggle mobile menu
   const handleToggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  // Handle click on any nav link
+  // Handle nav link click
   const handleNavLinkClick = (sectionId) => {
     setActiveLink(sectionId);
-    setIsMenuOpen(false); // Close the menu on mobile after clicking a link
+    setIsMenuOpen(false); // Close the mobile menu after clicking a link
   };
 
   // ScrollReveal effect (runs once on mount)
@@ -27,7 +27,7 @@ function App() {
       reset: true,
     });
 
-    sr.reveal('.home-title');
+    sr.reveal('.home-title', {delay: 200});
     sr.reveal('.button', { delay: 200 });
     sr.reveal('.home-img', { delay: 400 });
     sr.reveal('.home-social', { delay: 400 });
@@ -36,34 +36,43 @@ function App() {
     sr.reveal('.about-subtitle', { delay: 200 });
     sr.reveal('.about-text', { delay: 400 });
 
-    sr.reveal('.skills-subtitle', { delay: 100 });
-    sr.reveal('.skills-text', { delay: 150 });
-    sr.reveal('.skills-data', { interval: 200 });
-    sr.reveal('.skills-img', { delay: 400 });
+    sr.reveal('.Services-subtitle', { delay: 100 });
+    sr.reveal('.Services-text', { delay: 150 });
+    sr.reveal('.Services-data', { interval: 200 });
+    sr.reveal('.Services-img', { delay: 400 });
 
     sr.reveal('.work-img', { interval: 200 });
-
     sr.reveal('.contact-input', { interval: 200 });
   }, []);
 
+  // Common SVG style as an object (camelCased properties)
+  const svgStyle = {
+    shapeRendering: 'geometricPrecision',
+    textRendering: 'geometricPrecision',
+    imageRendering: 'optimizeQuality',
+    fillRule: 'evenodd',
+    clipRule: 'evenodd'
+  };
+
   return (
     <>
-            <StarBackground />
+      <StarBackground />
       {/* HEADER */}
       <header className="l-header">
         <nav className="nav bd-grid">
           <div>
-            {/* <a href="#home" className="nav-logo">
-              NextGem
-            </a> */}
-            <img src={'../public/nextgemBig.png'} width={200} height={100}></img>
+            {/* You can uncomment the below line if you prefer a text logo */}
+            {/* <a href="#home" className="nav-logo">NextGem</a> */}
+            <img
+              src={'../public/NEXTGEM LOGO 1-05.png'}
+              width={200}
+              height={100}
+              alt="NextGem Logo"
+            />
           </div>
 
           {/* Mobile/desktop nav menu */}
-          <div
-            className={`nav-menu ${isMenuOpen ? 'show' : ''}`}
-            id="nav-menu"
-          >
+          <div className={`nav-menu ${isMenuOpen ? 'show' : ''}`} id="nav-menu">
             <ul className="nav-list">
               <li className="nav-item">
                 <a
@@ -85,11 +94,11 @@ function App() {
               </li>
               <li className="nav-item">
                 <a
-                  href="#skills"
-                  className={`nav-link ${activeLink === '#skills' ? 'active' : ''}`}
-                  onClick={() => handleNavLinkClick('#skills')}
+                  href="#Services"
+                  className={`nav-link ${activeLink === '#Services' ? 'active' : ''}`}
+                  onClick={() => handleNavLinkClick('#Services')}
                 >
-                  Skills
+                  Services
                 </a>
               </li>
               <li className="nav-item">
@@ -114,11 +123,7 @@ function App() {
           </div>
 
           {/* Mobile nav toggle button */}
-          <div
-            className="nav-toggle"
-            id="nav-toggle"
-            onClick={handleToggleMenu}
-          >
+          <div className="nav-toggle" id="nav-toggle" onClick={handleToggleMenu}>
             <i className="bx bx-menu"></i>
           </div>
         </nav>
@@ -126,137 +131,240 @@ function App() {
 
       {/* MAIN CONTENT */}
       <main className="l-main">
-        {/* HOME */}
+        {/* HOME SECTION */}
         <section className="home bd-grid" id="home">
           <div className="home-data">
             <h1 className="home-title">
-              This is <br /><span className="home-title-color">NextGem</span>
-              <br /> 
+              This is <br />
+              <span className="home-title-color">NextGem</span>
+              <br />
             </h1>
-            <a href="#contact" className="button">
+            {/* Example button with star SVGs */}
+            <button className='contactButton'>
               Contact
-            </a>
+              <div className="star-1">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlSpace="preserve"
+                  version="1.1"
+                  style={svgStyle}
+                  viewBox="0 0 784.11 815.53"
+                  xmlnsXlink="http://www.w3.org/1999/xlink"
+                >
+                  <defs></defs>
+                  <g id="Layer_x0020_1">
+                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                    <path
+                      className="fil0"
+                      d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                    />
+                  </g>
+                </svg>
+              </div>
+              <div className="star-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlSpace="preserve"
+                  version="1.1"
+                  style={svgStyle}
+                  viewBox="0 0 784.11 815.53"
+                  xmlnsXlink="http://www.w3.org/1999/xlink"
+                >
+                  <defs></defs>
+                  <g id="Layer_x0020_1">
+                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                    <path
+                      className="fil0"
+                      d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                    />
+                  </g>
+                </svg>
+              </div>
+              <div className="star-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlSpace="preserve"
+                  version="1.1"
+                  style={svgStyle}
+                  viewBox="0 0 784.11 815.53"
+                  xmlnsXlink="http://www.w3.org/1999/xlink"
+                >
+                  <defs></defs>
+                  <g id="Layer_x0020_1">
+                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                    <path
+                      className="fil0"
+                      d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                    />
+                  </g>
+                </svg>
+              </div>
+              <div className="star-4">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlSpace="preserve"
+                  version="1.1"
+                  style={svgStyle}
+                  viewBox="0 0 784.11 815.53"
+                  xmlnsXlink="http://www.w3.org/1999/xlink"
+                >
+                  <defs></defs>
+                  <g id="Layer_x0020_1">
+                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                    <path
+                      className="fil0"
+                      d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                    />
+                  </g>
+                </svg>
+              </div>
+              <div className="star-5">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlSpace="preserve"
+                  version="1.1"
+                  style={svgStyle}
+                  viewBox="0 0 784.11 815.53"
+                  xmlnsXlink="http://www.w3.org/1999/xlink"
+                >
+                  <defs></defs>
+                  <g id="Layer_x0020_1">
+                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                    <path
+                      className="fil0"
+                      d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                    />
+                  </g>
+                </svg>
+              </div>
+              <div className="star-6">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlSpace="preserve"
+                  version="1.1"
+                  style={svgStyle}
+                  viewBox="0 0 784.11 815.53"
+                  xmlnsXlink="http://www.w3.org/1999/xlink"
+                >
+                  <defs></defs>
+                  <g id="Layer_x0020_1">
+                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                    <path
+                      className="fil0"
+                      d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                    />
+                  </g>
+                </svg>
+              </div>
+            </button>
           </div>
 
           <div className="home-social">
             <a href="#!" className="home-social-icon">
-              <i className="bx bxl-linkedin"></i>
+              <i className="bx bxl-tiktok"></i>
             </a>
             <a href="#!" className="home-social-icon">
               <i className="bx bxl-instagram"></i>
             </a>
-            <a href="#!" className="home-social-icon">
+            {/* <a href="#!" className="home-social-icon">
               <i className="bx bxl-github"></i>
-            </a>
+            </a> */}
           </div>
 
           <div className="home-img">
             <img
-              src={'../public/PIXELATED GEM-01.png'}
+              src={'../public/IMG_0560.png'}
               alt="NextGem Profile"
+              width={500}
+              height={500}
             />
           </div>
         </section>
 
-        {/* ABOUT */}
+        {/* ABOUT SECTION */}
         <section className="about section" id="about">
           <h2 className="section-title">About</h2>
-
           <div className="about-container bd-grid">
             <div className="about-img">
               <img
-                src="https://i.postimg.cc/NjdgX2sq/about.jpg"
+                src="../public/play.png"
                 alt="About"
               />
             </div>
-
             <div>
-              <h2 className="about-subtitle">I'm NextGem</h2>
-              <p className="about-text">
-                As a passionate web designer, I thrive on creating visually
-                appealing and user-friendly websites. My journey in web design
-                began with a fascination for how design can enhance user
-                experience.
-              </p>
+              <h2 className="about-subtitle">
+              
+              At NextGem , we specialize in branding, social media marketing, content creation, and digital strategies for all businesses. With expertise in brand positioning and digital storytelling, we help businesses build credibility, generate leads, and convert online engagement into real sales.
+              </h2>
             </div>
           </div>
         </section>
 
-        {/* SKILLS */}
-        <section className="skills section" id="skills">
-          <h2 className="section-title">Skills</h2>
-
-          <div className="skills-container bd-grid">
+        {/* Services SECTION */}
+        <section className="Services section" id="Services">
+          <h2 className="section-title">Services</h2>
+          <div className="Services-container bd-grid">
             <div>
-              <h2 className="skills-subtitle">Professional Skills</h2>
-              <p className="skills-text">
-                I love to think outside the box and bring unique ideas to life
-                through design, I have proficiency in HTML, CSS, and JavaScript,
-                ensuring that my designs are not only beautiful but also
-                functional. I prioritize the needs and preferences of users,
-                conducting research to understand their behaviors and
-                preferences.
+              <h2 className="Services-subtitle">Professional Services</h2>
+              <p className="Services-text">
+                I love to think outside the box and bring unique ideas to life through design. I have proficiency in HTML, CSS, and JavaScript,
+                ensuring that my designs are not only beautiful but also functional. I prioritize the needs and preferences of users,
+                conducting research to understand their behaviors and preferences.
               </p>
-
-              <div className="skills-data">
-                <div className="skills-names">
-                  <i className="bx bxl-html5 skills-icon"></i>
-                  <span className="skills-name">HTML5</span>
+              <div className="Services-data">
+                <div className="Services-names">
+                  <i className="bx bxl-html5 Services-icon"></i>
+                  <span className="Services-name">HTML5</span>
                 </div>
                 <div>
-                  <span className="skills-percentage">95%</span>
+                  <span className="Services-percentage">95%</span>
                 </div>
-                <div className="skills-bar skills-html"></div>
+                <div className="Services-bar Services-html"></div>
               </div>
-
-              <div className="skills-data">
-                <div className="skills-names">
-                  <i className="bx bxl-css3 skills-icon"></i>
-                  <span className="skills-name">CSS3</span>
+              <div className="Services-data">
+                <div className="Services-names">
+                  <i className="bx bxl-css3 Services-icon"></i>
+                  <span className="Services-name">CSS3</span>
                 </div>
                 <div>
-                  <span className="skills-percentage">85%</span>
+                  <span className="Services-percentage">85%</span>
                 </div>
-                <div className="skills-bar skills-css"></div>
+                <div className="Services-bar Services-css"></div>
               </div>
-
-              <div className="skills-data">
-                <div className="skills-names">
-                  <i className="bx bxl-javascript skills-icon"></i>
-                  <span className="skills-name">JAVASCRIPT</span>
+              <div className="Services-data">
+                <div className="Services-names">
+                  <i className="bx bxl-javascript Services-icon"></i>
+                  <span className="Services-name">JAVASCRIPT</span>
                 </div>
                 <div>
-                  <span className="skills-percentage">65%</span>
+                  <span className="Services-percentage">65%</span>
                 </div>
-                <div className="skills-bar skills-js"></div>
+                <div className="Services-bar Services-js"></div>
               </div>
-
-              <div className="skills-data">
-                <div className="skills-names">
-                  <i className="bx bxs-paint skills-icon"></i>
-                  <span className="skills-name">UX/UI</span>
+              <div className="Services-data">
+                <div className="Services-names">
+                  <i className="bx bxs-paint Services-icon"></i>
+                  <span className="Services-name">UX/UI</span>
                 </div>
                 <div>
-                  <span className="skills-percentage">85%</span>
+                  <span className="Services-percentage">85%</span>
                 </div>
-                <div className="skills-bar skills-ux"></div>
+                <div className="Services-bar Services-ux"></div>
               </div>
             </div>
-
             <div>
               <img
                 src="https://i.postimg.cc/52LWbPyt/work3.jpg"
-                alt="Skills"
-                className="skills-img"
+                alt="Services"
+                className="Services-img"
               />
             </div>
           </div>
         </section>
 
-        {/* WORK */}
-        <section className="work section" id="work">
+        {/* WORK SECTION */}
+        {/* <section className="work section" id="work">
           <h2 className="section-title">Work</h2>
-
           <div className="work-container bd-grid">
             <div className="work-img">
               <img
@@ -295,12 +403,12 @@ function App() {
               />
             </div>
           </div>
-        </section>
+        </section> */}
+        <ClientsCarousel />
 
-        {/* CONTACT */}
-        <section className="contact section" id="contact">
+        {/* CONTACT SECTION */}
+        {/* <section className="contact section" id="contact">
           <h2 className="section-title">Contact</h2>
-
           <div className="contact-container bd-grid">
             <form action="" className="contact-form">
               <input
@@ -319,7 +427,6 @@ function App() {
                 className="contact-input"
                 placeholder="Message"
               ></textarea>
-
               <input
                 type="button"
                 value="Send"
@@ -327,13 +434,61 @@ function App() {
               />
             </form>
           </div>
-        </section>
+        </section> */}
+        <div className="background">
+  <div className="container">
+    <div className="screen">
+      <div className="screen-header">
+        <div className="screen-header-left">
+          <div className="screen-header-button close"></div>
+          <div className="screen-header-button maximize"></div>
+          <div className="screen-header-button minimize"></div>
+        </div>
+        <div className="screen-header-right">
+          <div className="screen-header-ellipsis"></div>
+          <div className="screen-header-ellipsis"></div>
+          <div className="screen-header-ellipsis"></div>
+        </div>
+      </div>
+      <div className="screen-body">
+        <div className="screen-body-item left">
+          <div className="app-title">
+            <span>CONTACT</span>
+            <span>US</span>
+          </div>
+          <div className="app-contact">CONTACT INFO : creative@nextgem.agency</div>
+        </div>
+        <div className="screen-body-item">
+          <div className="app-form">
+            <div className="app-form-group">
+              <input className="app-form-control" placeholder="NAME" />
+            </div>
+            <div className="app-form-group">
+              <input className="app-form-control" placeholder="EMAIL"/>
+            </div>
+            <div className="app-form-group">
+              <input className="app-form-control" placeholder="Phone Number"/>
+            </div>
+            <div className="app-form-group message">
+              <input className="app-form-control" placeholder="MESSAGE"/>
+            </div>
+            <div className="app-form-group buttons">
+              <button className="app-form-button">CANCEL</button>
+              <button className="app-form-button">SEND</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
       </main>
 
       {/* FOOTER */}
       <footer className="footer">
         <p className="footer-title">NextGem</p>
-
         <div className="footer-social">
           <a href="#!" className="footer-icon">
             <i className="bx bxl-facebook"></i>
@@ -345,7 +500,6 @@ function App() {
             <i className="bx bxl-twitter"></i>
           </a>
         </div>
-
         <p>&#169; 2024 Copyright all rights reserved</p>
       </footer>
     </>
