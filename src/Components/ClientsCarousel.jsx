@@ -5,11 +5,25 @@ import './ClientsCarousel.css'; // Import custom CSS
 export default function ClientsCarousel() {
   // Replace with your client logo image paths and alt texts.
   const logos = [
-    { src: '/logos/client1.png', alt: 'Client 1' },
-    { src: '/logos/client2.png', alt: 'Client 2' },
-    { src: '/logos/client3.png', alt: 'Client 3' },
-    { src: '/logos/client4.png', alt: 'Client 4' },
-    { src: '/logos/client5.png', alt: 'Client 5' },
+    { src: '/public/SKOON LOGO_.png', alt: 'Client 1' },
+    { src: '/public/marina b.png', alt: 'Client 2' },
+    { src: '/public/HADDAD.png', alt: 'Client 3' },
+    { src: '/public/DARWISH.png', alt: 'Client 4' },
+    { src: '/public/chef hanna.png', alt: 'Client 5' },
+    { src: '/public/EASY RENT.png', alt: 'Client 5' },
+    { src: '/public/ELITE.png', alt: 'Client 5' },
+    { src: '/public/EXPO ADONIS.png', alt: 'Client 5' },
+    { src: '/public/GEMAN LINE.png', alt: 'Client 5' },
+    { src: '/public/goat.png', alt: 'Client 5' },
+    { src: '/public/ITAD.png', alt: 'Client 5' },
+    { src: '/public/LOGO Moverz-01.png', alt: 'Client 5' },
+    { src: '/public/PARI ROYAL.png', alt: 'Client 5' },
+    { src: '/public/pro cream.png', alt: 'Client 5' },
+    { src: '/public/RIO.png', alt: 'Client 5' },
+    { src: '/public/TIO.png', alt: 'Client 5' },
+    { src: '/public/u-feed.png', alt: 'Client 5' },
+    { src: '/public/vintage closet.png', alt: 'Client 5' },
+    { src: '/public/ Master Cabin.png', alt: 'Client 5' },
     // Add more logos as needed.
   ];
 
@@ -35,7 +49,7 @@ export default function ClientsCarousel() {
 
   return (
     <div className="clients-carousel">
-      <h2>Our Clients</h2>
+      {/* <h2 style={{color:"#fff", marginBottom: "10%"}}>Our Clients</h2> */}
       <Slider {...settings}>
         {logos.map((logo, index) => (
           <div key={index} className="client-logo">

@@ -3,6 +3,7 @@ import ScrollReveal from 'scrollreveal';
 import './App.css'; // <-- Import your CSS
 import StarBackground from './Components/StarBackground'; // Our new star background
 import ClientsCarousel from './Components/ClientsCarousel';
+import { HomeServicesSection } from './Components/HomeServicesSection';
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState('#home');
@@ -55,7 +56,7 @@ function App() {
   };
 
   return (
-    <>
+    <> 
       <StarBackground />
       {/* HEADER */}
       <header className="l-header">
@@ -107,7 +108,7 @@ function App() {
                   className={`nav-link ${activeLink === '#work' ? 'active' : ''}`}
                   onClick={() => handleNavLinkClick('#work')}
                 >
-                  Work
+                  Clients
                 </a>
               </li>
               <li className="nav-item">
@@ -300,189 +301,64 @@ function App() {
           </div>
         </section>
 
-        {/* Services SECTION */}
-        <section className="Services section" id="Services">
-          <h2 className="section-title">Services</h2>
-          <div className="Services-container bd-grid">
-            <div>
-              <h2 className="Services-subtitle">Professional Services</h2>
-              <p className="Services-text">
-                I love to think outside the box and bring unique ideas to life through design. I have proficiency in HTML, CSS, and JavaScript,
-                ensuring that my designs are not only beautiful but also functional. I prioritize the needs and preferences of users,
-                conducting research to understand their behaviors and preferences.
-              </p>
-              <div className="Services-data">
-                <div className="Services-names">
-                  <i className="bx bxl-html5 Services-icon"></i>
-                  <span className="Services-name">HTML5</span>
-                </div>
-                <div>
-                  <span className="Services-percentage">95%</span>
-                </div>
-                <div className="Services-bar Services-html"></div>
-              </div>
-              <div className="Services-data">
-                <div className="Services-names">
-                  <i className="bx bxl-css3 Services-icon"></i>
-                  <span className="Services-name">CSS3</span>
-                </div>
-                <div>
-                  <span className="Services-percentage">85%</span>
-                </div>
-                <div className="Services-bar Services-css"></div>
-              </div>
-              <div className="Services-data">
-                <div className="Services-names">
-                  <i className="bx bxl-javascript Services-icon"></i>
-                  <span className="Services-name">JAVASCRIPT</span>
-                </div>
-                <div>
-                  <span className="Services-percentage">65%</span>
-                </div>
-                <div className="Services-bar Services-js"></div>
-              </div>
-              <div className="Services-data">
-                <div className="Services-names">
-                  <i className="bx bxs-paint Services-icon"></i>
-                  <span className="Services-name">UX/UI</span>
-                </div>
-                <div>
-                  <span className="Services-percentage">85%</span>
-                </div>
-                <div className="Services-bar Services-ux"></div>
-              </div>
-            </div>
-            <div>
-              <img
-                src="https://i.postimg.cc/52LWbPyt/work3.jpg"
-                alt="Services"
-                className="Services-img"
-              />
-            </div>
-          </div>
-        </section>
+        {/* Services */}
+        <h2 className="section-title"> Services</h2>
+        <HomeServicesSection/>
 
-        {/* WORK SECTION */}
-        {/* <section className="work section" id="work">
-          <h2 className="section-title">Work</h2>
-          <div className="work-container bd-grid">
-            <div className="work-img">
-              <img
-                src="https://i.postimg.cc/NM0n9bsm/work1.jpg"
-                alt="Work 1"
-              />
-            </div>
-            <div className="work-img">
-              <img
-                src="https://i.postimg.cc/tJZmDTVg/work2.jpg"
-                alt="Work 2"
-              />
-            </div>
-            <div className="work-img">
-              <img
-                src="https://i.postimg.cc/52LWbPyt/work3.jpg"
-                alt="Work 3"
-              />
-            </div>
-            <div className="work-img">
-              <img
-                src="https://i.postimg.cc/fW1wsSCB/work4.jpg"
-                alt="Work 4"
-              />
-            </div>
-            <div className="work-img">
-              <img
-                src="https://i.postimg.cc/m2MTgZ6R/work5.jpg"
-                alt="Work 5"
-              />
-            </div>
-            <div className="work-img">
-              <img
-                src="https://i.postimg.cc/Qd3h9LR7/work6.jpg"
-                alt="Work 6"
-              />
-            </div>
-          </div>
-        </section> */}
+        {/* Client */}
+        <h2 className="section-title"> Clients</h2>
         <ClientsCarousel />
 
         {/* CONTACT SECTION */}
-        {/* <section className="contact section" id="contact">
-          <h2 className="section-title">Contact</h2>
-          <div className="contact-container bd-grid">
-            <form action="" className="contact-form">
-              <input
-                type="text"
-                placeholder="Name"
-                className="contact-input"
-              />
-              <input
-                type="email"
-                placeholder="Email"
-                className="contact-input"
-              />
-              <textarea
-                cols="0"
-                rows="10"
-                className="contact-input"
-                placeholder="Message"
-              ></textarea>
-              <input
-                type="button"
-                value="Send"
-                className="contact-button button"
-              />
-            </form>
-          </div>
-        </section> */}
+      
         <div className="background">
-  <div className="container">
-    <div className="screen">
-      <div className="screen-header">
-        <div className="screen-header-left">
-          <div className="screen-header-button close"></div>
-          <div className="screen-header-button maximize"></div>
-          <div className="screen-header-button minimize"></div>
-        </div>
-        <div className="screen-header-right">
-          <div className="screen-header-ellipsis"></div>
-          <div className="screen-header-ellipsis"></div>
-          <div className="screen-header-ellipsis"></div>
+        <div className="container">
+          <div className="screen">
+            <div className="screen-header">
+              <div className="screen-header-left">
+                <div className="screen-header-button close"></div>
+                <div className="screen-header-button maximize"></div>
+                <div className="screen-header-button minimize"></div>
+              </div>
+              <div className="screen-header-right">
+                <div className="screen-header-ellipsis"></div>
+                <div className="screen-header-ellipsis"></div>
+                <div className="screen-header-ellipsis"></div>
+              </div>
+            </div>
+            <div className="screen-body">
+              <div className="screen-body-item left">
+                <div className="app-title">
+                  <span>CONTACT</span>
+                  <span>US</span>
+                </div>
+                <div className="app-contact">CONTACT INFO : creative@nextgem.agency</div>
+              </div>
+              <div className="screen-body-item">
+                <div className="app-form">
+                  <div className="app-form-group">
+                    <input className="app-form-control" placeholder="NAME" />
+                  </div>
+                  <div className="app-form-group">
+                    <input className="app-form-control" placeholder="EMAIL"/>
+                  </div>
+                  <div className="app-form-group">
+                    <input className="app-form-control" placeholder="Phone Number"/>
+                  </div>
+                  <div className="app-form-group message">
+                    <input className="app-form-control" placeholder="MESSAGE"/>
+                  </div>
+                  <div className="app-form-group buttons">
+                    <button className="app-form-button">CANCEL</button>
+                    <button className="app-form-button">SEND</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
         </div>
       </div>
-      <div className="screen-body">
-        <div className="screen-body-item left">
-          <div className="app-title">
-            <span>CONTACT</span>
-            <span>US</span>
-          </div>
-          <div className="app-contact">CONTACT INFO : creative@nextgem.agency</div>
-        </div>
-        <div className="screen-body-item">
-          <div className="app-form">
-            <div className="app-form-group">
-              <input className="app-form-control" placeholder="NAME" />
-            </div>
-            <div className="app-form-group">
-              <input className="app-form-control" placeholder="EMAIL"/>
-            </div>
-            <div className="app-form-group">
-              <input className="app-form-control" placeholder="Phone Number"/>
-            </div>
-            <div className="app-form-group message">
-              <input className="app-form-control" placeholder="MESSAGE"/>
-            </div>
-            <div className="app-form-group buttons">
-              <button className="app-form-button">CANCEL</button>
-              <button className="app-form-button">SEND</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-  </div>
-</div>
 
       </main>
 
@@ -500,7 +376,7 @@ function App() {
             <i className="bx bxl-twitter"></i>
           </a>
         </div>
-        <p>&#169; 2024 Copyright all rights reserved</p>
+        <p>&#169; 2025 Copyright all rights reserved</p>
       </footer>
     </>
   );
