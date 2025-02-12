@@ -5,6 +5,9 @@ import StarBackground from './Components/StarBackground'; // Our new star backgr
 import ClientsCarousel from './Components/ClientsCarousel';
 import { HomeServicesSection } from './Components/HomeServicesSection';
 import LOGO1 from '../public/NEXTGEM LOGO 1-05.png'
+import LOGO2 from '../public/IMG_0560.png'
+import AboutLogo from '../public/play.png'
+
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState('#home');
@@ -275,7 +278,7 @@ function App() {
 
           <div className="home-img">
             <img
-              src={'../public/IMG_0560.png'}
+              src={LOGO2}
               alt="NextGem Profile"
               width={500}
               height={500}
@@ -289,7 +292,7 @@ function App() {
           <div className="about-container bd-grid">
             <div className="about-img">
               <img
-                src="../public/play.png"
+                src={AboutLogo}
                 alt="About"
               />
             </div>
