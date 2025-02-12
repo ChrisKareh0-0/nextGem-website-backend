@@ -4,9 +4,9 @@ import './App.css'; // <-- Import your CSS
 import StarBackground from './Components/StarBackground'; // Our new star background
 import ClientsCarousel from './Components/ClientsCarousel';
 import { HomeServicesSection } from './Components/HomeServicesSection';
-import LOGO1 from '../public/NEXTGEM LOGO 1-05.png'
-import LOGO2 from '../public/IMG_0560.png'
-import AboutLogo from '../public/play.png'
+import LOGO1 from '../public/NEXTGEM LOGO 1-05.png';
+import LOGO2 from '../public/IMG_0560.png';
+import AboutLogo from '../public/play.png';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -32,20 +32,17 @@ function App() {
       reset: true,
     });
 
-    sr.reveal('.home-title', {delay: 200});
+    sr.reveal('.home-title', { delay: 200 });
     sr.reveal('.button', { delay: 200 });
     sr.reveal('.home-img', { delay: 400 });
     sr.reveal('.home-social', { delay: 400 });
-
     sr.reveal('.about-img');
     sr.reveal('.about-subtitle', { delay: 200 });
     sr.reveal('.about-text', { delay: 400 });
-
     sr.reveal('.Services-subtitle', { delay: 100 });
     sr.reveal('.Services-text', { delay: 150 });
     sr.reveal('.Services-data', { interval: 200 });
     sr.reveal('.Services-img', { delay: 400 });
-
     sr.reveal('.work-img', { interval: 200 });
     sr.reveal('.contact-input', { interval: 200 });
   }, []);
@@ -59,8 +56,16 @@ function App() {
     clipRule: 'evenodd'
   };
 
+  // Scroll to the contact section
+  const scrollToContact = () => {
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <> 
+    <>
       <StarBackground />
       {/* HEADER */}
       <header className="l-header">
@@ -126,8 +131,7 @@ function App() {
               </li>
             </ul>
           </div>
-
-          {/* Mobile nav toggle button */}
+          {/* Optionally include mobile nav toggle if needed */}
           {/* <div className="nav-toggle" id="nav-toggle" onClick={handleToggleMenu}>
             <i className="bx bx-menu"></i>
           </div> */}
@@ -144,8 +148,8 @@ function App() {
               <span className="home-title-color">NextGem</span>
               <br />
             </h1>
-            {/* Example button with star SVGs */}
-            <button className='contactButton'>
+            {/* Contact button now scrolls to the contact section */}
+            <button className="contactButton" onClick={scrollToContact}>
               Contact
               <div className="star-1">
                 <svg
@@ -271,9 +275,6 @@ function App() {
             <a href="#!" className="home-social-icon">
               <i className="bx bxl-instagram"></i>
             </a>
-            {/* <a href="#!" className="home-social-icon">
-              <i className="bx bxl-github"></i>
-            </a> */}
           </div>
 
           <div className="home-img">
@@ -298,8 +299,7 @@ function App() {
             </div>
             <div>
               <h2 className="about-subtitle">
-              
-              At NextGem , we specialize in branding, social media marketing, content creation, and digital strategies for all businesses. With expertise in brand positioning and digital storytelling, we help businesses build credibility, generate leads, and convert online engagement into real sales.
+                At NextGem, we specialize in branding, social media marketing, content creation, and digital strategies for all businesses. With expertise in brand positioning and digital storytelling, we help businesses build credibility, generate leads, and convert online engagement into real sales.
               </h2>
             </div>
           </div>
@@ -314,56 +314,54 @@ function App() {
         <ClientsCarousel />
 
         {/* CONTACT SECTION */}
-      
-        <div className="background">
-        <div className="container">
-          <div className="screen">
-            <div className="screen-header">
-              <div className="screen-header-left">
-                <div className="screen-header-button close"></div>
-                <div className="screen-header-button maximize"></div>
-                <div className="screen-header-button minimize"></div>
-              </div>
-              <div className="screen-header-right">
-                <div className="screen-header-ellipsis"></div>
-                <div className="screen-header-ellipsis"></div>
-                <div className="screen-header-ellipsis"></div>
-              </div>
-            </div>
-            <div className="screen-body">
-              <div className="screen-body-item left">
-                <div className="app-title">
-                  <span>CONTACT</span>
-                  <span>US</span>
+        {/* Adding an id "contact" so that scrollIntoView works */}
+        <div id="contact" className="background">
+          <div className="container">
+            <div className="screen">
+              <div className="screen-header">
+                <div className="screen-header-left">
+                  <div className="screen-header-button close"></div>
+                  <div className="screen-header-button maximize"></div>
+                  <div className="screen-header-button minimize"></div>
                 </div>
-                <div className="app-contact">CONTACT INFO : creative@nextgem.agency</div>
-              </div>
-              <div className="screen-body-item">
-                <div className="app-form">
-                  <div className="app-form-group">
-                    <input className="app-form-control" placeholder="NAME" />
-                  </div>
-                  <div className="app-form-group">
-                    <input className="app-form-control" placeholder="EMAIL"/>
-                  </div>
-                  <div className="app-form-group">
-                    <input className="app-form-control" placeholder="Phone Number"/>
-                  </div>
-                  <div className="app-form-group message">
-                    <input className="app-form-control" placeholder="MESSAGE"/>
-                  </div>
-                  <div className="app-form-group buttons">
-                    <button className="app-form-button">CANCEL</button>
-                    <button className="app-form-button">SEND</button>
-                  </div>
+                <div className="screen-header-right">
+                  <div className="screen-header-ellipsis"></div>
+                  <div className="screen-header-ellipsis"></div>
+                  <div className="screen-header-ellipsis"></div>
                 </div>
               </div>
-            </div>
+              <div className="screen-body">
+                <div className="screen-body-item left">
+                  <div className="app-title">
+                    <span>CONTACT</span>
+                    <span>US</span>
+                  </div>
+                  <div className="app-contact">CONTACT INFO : creative@nextgem.agency</div>
+                </div>
+                <div className="screen-body-item">
+                  <div className="app-form">
+                    <div className="app-form-group">
+                      <input className="app-form-control" placeholder="NAME" />
+                    </div>
+                    <div className="app-form-group">
+                      <input className="app-form-control" placeholder="EMAIL"/>
+                    </div>
+                    <div className="app-form-group">
+                      <input className="app-form-control" placeholder="Phone Number"/>
+                    </div>
+                    <div className="app-form-group message">
+                      <input className="app-form-control" placeholder="MESSAGE"/>
+                    </div>
+                    <div className="app-form-group buttons">
+                      <button className="app-form-button">CANCEL</button>
+                      <button className="app-form-button">SEND</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>          
           </div>
-          
         </div>
-      </div>
-
       </main>
 
       {/* FOOTER */}

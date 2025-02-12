@@ -713,7 +713,7 @@ body, button, input {
 }
 
 /* ===================== Mobile Styles ===================== */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1068px) {
     /* Navigation adjustments */
     .nav-menu {
         position: fixed;
