@@ -4,6 +4,7 @@ import './App.css'; // <-- Import your CSS
 import StarBackground from './Components/StarBackground'; // Our new star background
 import ClientsCarousel from './Components/ClientsCarousel';
 import { HomeServicesSection } from './Components/HomeServicesSection';
+import LOGO1 from '../public/NEXTGEM LOGO 1-05.png'
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState('#home');
@@ -65,7 +66,7 @@ function App() {
             {/* You can uncomment the below line if you prefer a text logo */}
             {/* <a href="#home" className="nav-logo">NextGem</a> */}
             <img
-              src={'../public/NEXTGEM LOGO 1-05.png'}
+              src={LOGO1}
               width={200}
               height={100}
               alt="NextGem Logo"
@@ -124,9 +125,9 @@ function App() {
           </div>
 
           {/* Mobile nav toggle button */}
-          <div className="nav-toggle" id="nav-toggle" onClick={handleToggleMenu}>
+          {/* <div className="nav-toggle" id="nav-toggle" onClick={handleToggleMenu}>
             <i className="bx bx-menu"></i>
-          </div>
+          </div> */}
         </nav>
       </header>
 
