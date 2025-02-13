@@ -744,16 +744,23 @@ body, button, input {
     .home-title {
         margin-left: 0;
         font-size: 2rem;
+        margin-top: 20%;
     }
     .home-social {
         margin-left: 0;
         justify-content: center;
+        display: flex;
+        flex-direction: row !important;
+        gap: 30px;
         margin-top: 1rem;
     }
     .home-img {
-        position: relative;
+        position: absolute;
         margin: 1rem auto;
         width: auto;
+        top: 0;
+        margin-left: 25%;
+        margin-top: 10%;
     }
     /* Center the Contact Button */
     .contactButton {
