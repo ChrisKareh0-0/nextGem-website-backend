@@ -713,7 +713,7 @@ body, button, input {
 }
 
 /* ===================== Mobile Styles ===================== */
-@media screen and (max-width: 1068px) {
+@media screen and (max-width: 1568px) {
     /* Navigation adjustments */
     .nav-menu {
         position: fixed;
@@ -761,6 +761,10 @@ body, button, input {
         top: 0;
         margin-left: 25%;
         margin-top: 10%;
+    }
+    .home-img img{
+        width: 150px;
+        height: 150px;
     }
     /* Center the Contact Button */
     .contactButton {
