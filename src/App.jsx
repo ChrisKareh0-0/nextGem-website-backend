@@ -71,7 +71,7 @@ function App() {
       <header className="l-header">
         <nav className="nav bd-grid">
           <div>
-            {/* You can uncomment the below line if you prefer a text logo */}
+            {/* Optionally, uncomment text logo */}
             {/* <a href="#home" className="nav-logo">NextGem</a> */}
             <img
               src={LOGO1}
@@ -131,7 +131,7 @@ function App() {
               </li>
             </ul>
           </div>
-          {/* Optionally include mobile nav toggle if needed */}
+          {/* Optionally include mobile nav toggle */}
           {/* <div className="nav-toggle" id="nav-toggle" onClick={handleToggleMenu}>
             <i className="bx bx-menu"></i>
           </div> */}
@@ -148,7 +148,7 @@ function App() {
               <span className="home-title-color">NextGem</span>
               <br />
             </h1>
-            {/* Contact button now scrolls to the contact section */}
+            {/* Contact button scrolls to the contact section */}
             <button className="contactButton" onClick={scrollToContact}>
               Contact
               <div className="star-1">
@@ -163,10 +163,7 @@ function App() {
                   <defs></defs>
                   <g id="Layer_x0020_1">
                     <metadata id="CorelCorpID_0Corel-Layer"></metadata>
-                    <path
-                      className="fil0"
-                      d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
-                    />
+                    <path className="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" />
                   </g>
                 </svg>
               </div>
@@ -182,10 +179,7 @@ function App() {
                   <defs></defs>
                   <g id="Layer_x0020_1">
                     <metadata id="CorelCorpID_0Corel-Layer"></metadata>
-                    <path
-                      className="fil0"
-                      d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
-                    />
+                    <path className="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" />
                   </g>
                 </svg>
               </div>
@@ -201,10 +195,7 @@ function App() {
                   <defs></defs>
                   <g id="Layer_x0020_1">
                     <metadata id="CorelCorpID_0Corel-Layer"></metadata>
-                    <path
-                      className="fil0"
-                      d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
-                    />
+                    <path className="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" />
                   </g>
                 </svg>
               </div>
@@ -220,10 +211,7 @@ function App() {
                   <defs></defs>
                   <g id="Layer_x0020_1">
                     <metadata id="CorelCorpID_0Corel-Layer"></metadata>
-                    <path
-                      className="fil0"
-                      d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
-                    />
+                    <path className="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" />
                   </g>
                 </svg>
               </div>
@@ -239,10 +227,7 @@ function App() {
                   <defs></defs>
                   <g id="Layer_x0020_1">
                     <metadata id="CorelCorpID_0Corel-Layer"></metadata>
-                    <path
-                      className="fil0"
-                      d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
-                    />
+                    <path className="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" />
                   </g>
                 </svg>
               </div>
@@ -258,22 +243,26 @@ function App() {
                   <defs></defs>
                   <g id="Layer_x0020_1">
                     <metadata id="CorelCorpID_0Corel-Layer"></metadata>
-                    <path
-                      className="fil0"
-                      d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
-                    />
+                    <path className="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" />
                   </g>
                 </svg>
               </div>
             </button>
           </div>
 
+          {/* All social icons in one container */}
           <div className="home-social">
-            <a href="#!" className="home-social-icon">
+            <a href="https://www.tiktok.com/@nextgemagency_?_t=ZS-8tr0VGTNNmp&_r=1" className="home-social-icon">
               <i className="bx bxl-tiktok"></i>
             </a>
-            <a href="#!" className="home-social-icon">
+            <a href="https://www.instagram.com/nextgemagency?igsh=bjExOG1qd215MXpi&utm_source=qr" className="home-social-icon">
               <i className="bx bxl-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/share/18LhroPBFo/?mibextid=wwXIfr" className="home-social-icon">
+              <i className="bx bxl-facebook"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/nextgem-agency/" className="home-social-icon">
+              <i className="bx bxl-linkedin"></i>
             </a>
           </div>
 
@@ -314,7 +303,6 @@ function App() {
         <ClientsCarousel />
 
         {/* CONTACT SECTION */}
-        {/* Adding an id "contact" so that scrollIntoView works */}
         <div id="contact" className="background">
           <div className="container">
             <div className="screen">
