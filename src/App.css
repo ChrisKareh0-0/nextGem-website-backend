@@ -603,10 +603,20 @@ body, button, input {
     border: none;
     border-bottom: 1px solid #666;
     color: #ddd;
-    font-size: 14px;
+    
     text-transform: uppercase;
     outline: none;
-    transition: border-color .2s;
+    font-size: 14px; /* Initial font size */
+  transition: font-size 0.2s; /* Add a transition for smooth scaling */
+}.app-form-control:focus {
+    border-bottom-color: #ddd;
+
+
+}.app-form-control:where([placeholder="NAME"]:valid, 
+                        [placeholder="EMAIL"]:valid, 
+                        [placeholder="CONTACT INFO"]:valid, 
+                        [placeholder="MESSAGE"]:valid) { 
+  font-size: clamp(8px, calc(14px - (length(value) * 0.1px)), 14px);
 }
   
 .app-form-control::placeholder {

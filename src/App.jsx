@@ -8,6 +8,34 @@ import LOGO1 from '../public/NEXTGEM LOGO 1-05.png';
 import LOGO2 from '../public/IMG_0560.png';
 import AboutLogo from '../public/play.png';
 
+
+
+const ResizableInput = ({ placeholder }) => {
+  const [fontSize, setFontSize] = useState(14);
+
+  const handleInput = (event) => {
+    const input = event.target;
+    const maxWidth = input.clientWidth;
+    const textWidth = input.scrollWidth;
+
+    if (textWidth > maxWidth) {
+      setFontSize((prevSize) => Math.max(prevSize - 1, 8));
+    } else {
+      setFontSize(14);
+    }
+  };
+
+  return (
+    <input
+      className="app-form-control"
+      placeholder={placeholder}
+      style={{ fontSize: `${fontSize}px`, transition: 'font-size 0.2s ease' }}
+      onInput={handleInput}
+    />
+  );
+};
+
+
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState('#home');
@@ -329,16 +357,19 @@ function App() {
                 <div className="screen-body-item">
                   <div className="app-form">
                     <div className="app-form-group">
-                      <input className="app-form-control" placeholder="NAME" />
+                    <ResizableInput placeholder="NAME" />
                     </div>
                     <div className="app-form-group">
-                      <input className="app-form-control" placeholder="EMAIL"/>
+                      {/* <input className="app-form-control" placeholder="EMAIL"/> */}
+                      <ResizableInput placeholder="EMAIL"/>
                     </div>
                     <div className="app-form-group">
-                      <input className="app-form-control" placeholder="Phone Number"/>
+                      {/* <input className="app-form-control" placeholder="Phone Number"/> */}
+                      <ResizableInput placeholder="Phone Number"/>
                     </div>
                     <div className="app-form-group message">
-                      <input className="app-form-control" placeholder="MESSAGE"/>
+                      {/* <input className="app-form-control" placeholder="MESSAGE"/> */}
+                      <ResizableInput placeholder="Message" />
                     </div>
                     <div className="app-form-group buttons">
                       <button className="app-form-button">CANCEL</button>
