@@ -352,8 +352,8 @@ function App() {
               <div className="screen-body">
                 <div className="screen-body-item left">
                   <div className="app-title">
-                    <span>CONTACT</span>
-                    <span>US</span>
+                    <span>CONTACT US</span>
+                    <span></span>
                   </div>
                   <div className="app-contact">CONTACT INFO : creative@nextgem.agency</div>
                 </div>

@@ -794,3 +794,47 @@ body, button, input {
     }
     
 }
+
+@media screen and (max-width: 768px) {
+    .app-title {
+        font-size: 20px;  /* Smaller font size for mobile */
+        text-align: center;
+    }
+
+    .app-title:after {
+        left: 50%;  /* Center the underline */
+        transform: translateX(-50%);
+    }
+
+    .app-form-control {
+        font-size: 16px;  /* Larger initial font size for mobile */
+        padding: 15px 0;  /* More padding for better touch targets */
+    }
+
+    .app-form-group {
+        margin-bottom: 25px;  /* More space between form groups */
+    }
+
+    .app-form-button {
+        font-size: 16px;  /* Larger button text */
+        padding: 10px 15px;  /* Larger touch target */
+    }
+
+    .screen-body {
+        flex-direction: column;  /* Stack items vertically on mobile */
+    }
+
+    .screen-body-item {
+        padding: 20px;  /* Less padding on mobile */
+    }
+
+    .screen-body-item.left {
+        margin-bottom: 30px;  /* Space between title and form */
+    }
+
+    .app-contact {
+        font-size: 10px;  /* Slightly larger contact info */
+        text-align: center;
+        margin-top: 20px;
+    }
+}

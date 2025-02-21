@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 
 const ResizableInput = ({ placeholder, value, onChange }) => {
-  const [fontSize, setFontSize] = useState(14);
+  const [fontSize, setFontSize] = useState(window.innerWidth <= 768 ? 16 : 14);
 
   const handleInput = (event) => {
     const input = event.target;
@@ -10,20 +10,34 @@ const ResizableInput = ({ placeholder, value, onChange }) => {
     const textWidth = input.scrollWidth;
 
     if (textWidth > maxWidth) {
-      setFontSize((prevSize) => Math.max(prevSize - 1, 8));
+      setFontSize((prevSize) => Math.max(prevSize - 1, window.innerWidth <= 768 ? 12 : 8));
     } else {
-      setFontSize(14);
+      setFontSize(window.innerWidth <= 768 ? 16 : 14);
     }
 
     onChange(event);
   };
+
+  // Handle window resize
+  useEffect(() => {
+    const handleResize = () => {
+      setFontSize(window.innerWidth <= 768 ? 16 : 14);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
     <input
       className="app-form-control"
       placeholder={placeholder}
       value={value}
-      style={{ fontSize: `${fontSize}px`, transition: 'font-size 0.2s ease' }}
+      style={{ 
+        fontSize: `${fontSize}px`, 
+        transition: 'font-size 0.2s ease',
+        padding: window.innerWidth <= 768 ? '15px 0' : '10px 0'
+      }}
       onInput={handleInput}
       onChange={handleInput}
     />
