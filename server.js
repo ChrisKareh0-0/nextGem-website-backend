@@ -18,14 +18,34 @@ const connectDB = async () => {
     const conn = await mongoose.connect(process.env.MONGODB_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
+      serverSelectionTimeoutMS: 50000, // Increased to 50 seconds
+      socketTimeoutMS: 50000, // Increased to 50 seconds
+      connectTimeoutMS: 50000, // Increased to 50 seconds
+      keepAlive: true,
+      keepAliveInitialDelay: 300000 // keeping 5 minutes for keep-alive
     });
     console.log(`MongoDB Connected: ${conn.connection.host}`);
   } catch (error) {
-    console.error(`Error: ${error.message}`);
+    console.error(`MongoDB Connection Error: ${error.message}`);
     // Retry connection after 5 seconds
+    console.log('Retrying connection in 5 seconds...');
     setTimeout(connectDB, 5000);
   }
 };
+
+// Also add connection event listeners
+mongoose.connection.on('error', err => {
+  console.error('MongoDB connection error:', err);
+});
+
+mongoose.connection.on('disconnected', () => {
+  console.log('MongoDB disconnected. Attempting to reconnect...');
+  setTimeout(connectDB, 5000);
+});
+
+mongoose.connection.on('connected', () => {
+  console.log('MongoDB connected successfully');
+});
 
 // Connect to MongoDB before starting the server
 connectDB().then(() => {
