@@ -21,8 +21,6 @@ const connectDB = async () => {
       serverSelectionTimeoutMS: 50000, // Increased to 50 seconds
       socketTimeoutMS: 50000, // Increased to 50 seconds
       connectTimeoutMS: 50000, // Increased to 50 seconds
-      keepAlive: true,
-      keepAliveInitialDelay: 300000 // keeping 5 minutes for keep-alive
     });
     console.log(`MongoDB Connected: ${conn.connection.host}`);
   } catch (error) {
