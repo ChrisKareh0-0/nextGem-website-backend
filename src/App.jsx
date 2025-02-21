@@ -7,6 +7,9 @@ import { HomeServicesSection } from './Components/HomeServicesSection';
 import LOGO1 from '../public/NEXTGEM LOGO 1-05.png';
 import LOGO2 from '../public/IMG_0560.png';
 import AboutLogo from '../public/play.png';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import ContactForm from './Components/ContactForm';
 
 
 
@@ -355,27 +358,7 @@ function App() {
                   <div className="app-contact">CONTACT INFO : creative@nextgem.agency</div>
                 </div>
                 <div className="screen-body-item">
-                  <div className="app-form">
-                    <div className="app-form-group">
-                    <ResizableInput placeholder="NAME" />
-                    </div>
-                    <div className="app-form-group">
-                      {/* <input className="app-form-control" placeholder="EMAIL"/> */}
-                      <ResizableInput placeholder="EMAIL"/>
-                    </div>
-                    <div className="app-form-group">
-                      {/* <input className="app-form-control" placeholder="Phone Number"/> */}
-                      <ResizableInput placeholder="Phone Number"/>
-                    </div>
-                    <div className="app-form-group message">
-                      {/* <input className="app-form-control" placeholder="MESSAGE"/> */}
-                      <ResizableInput placeholder="Message" />
-                    </div>
-                    <div className="app-form-group buttons">
-                      <button className="app-form-button">CANCEL</button>
-                      <button className="app-form-button">SEND</button>
-                    </div>
-                  </div>
+                  <ContactForm />
                 </div>
               </div>
             </div>          
@@ -399,6 +382,19 @@ function App() {
         </div>
         <p>&#169; 2025 Copyright all rights reserved</p>
       </footer>
+
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     </>
   );
 }
