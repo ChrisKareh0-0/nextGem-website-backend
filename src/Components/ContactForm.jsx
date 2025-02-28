@@ -44,6 +44,8 @@ const ResizableInput = ({ placeholder, value, onChange }) => {
   );
 };
 
+const API_URL = 'https://nextgem-website-backend-thrn.onrender.com/api/contacts';
+
 export default function ContactForm() {
   const [formData, setFormData] = useState({
     name: '',
@@ -77,16 +79,18 @@ export default function ContactForm() {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('http://localhost:5000/api/contacts', {
+      const response = await fetch(API_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json'
         },
         body: JSON.stringify(formData)
       });
 
       if (!response.ok) {
-        throw new Error('Failed to submit form');
+        const errorData = await response.json().catch(() => null);
+        throw new Error(errorData?.error || `HTTP error! status: ${response.status}`);
       }
 
       const data = await response.json();
@@ -94,7 +98,7 @@ export default function ContactForm() {
       setFormData({ name: '', email: '', phone: '', message: '' });
     } catch (error) {
       console.error('Error submitting form:', error);
-      toast.error('Failed to send message. Please try again.');
+      toast.error(error.message || 'Failed to send message. Please try again.');
     } finally {
       setIsSubmitting(false);
     }
