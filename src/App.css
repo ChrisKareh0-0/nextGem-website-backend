@@ -838,3 +838,28 @@ body, button, input {
         margin-top: 20px;
     }
 }
+
+/* Add this at the end of your App.css file */
+/* @keyframes moveUpDown {
+   0% {
+     transform: translateY(0);
+   }
+   50% {
+     transform: translateY(-20px);
+   }
+   100% {
+     transform: translateY(0);
+   }
+} */
+
+.floating-rectangle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 150px;
+  height: 60px;
+  background-color: #121212;
+  z-index: 0;
+  animation: moveUpDown 3s ease-in-out infinite;
+  border-radius: 4px;
+}
